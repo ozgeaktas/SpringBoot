@@ -19,38 +19,40 @@ public class LanguageManager implements LanguageService {
 		this.languageRepository = languageRepository;
 	}
 
-	@Override
-	public void add(Language language) {
-		if(language.getName().isEmpty()) {
-			System.out.println("isim alanı boş bırakılamaz.");
-			
-		}else {
-			languageRepository.add(language);
-		}
-		
-		
-	}
+	
 
 	@Override
 	public List<Language> getAll() {
 		// TODO Auto-generated method stub
 		return languageRepository.getAll();
 	}
-
+	
 	@Override
-	public void delete(Language language) {
-		// TODO Auto-generated method stub
-		 languageRepository.delete(language);
+	public void add(Language language) throws Exception {
+		  
+			if(language.getName().isEmpty()) {
+				throw new Exception("Please type a programming language!");		
+			}else if(!this.isValid(language)) {
+				throw new Exception("Programming language already exists!");	
+			}
+			else {
+				languageRepository.add(language);					
+			}		
 		
 	}
 
 	@Override
-	public void update(Language language, String name) {
-		if(language.getName().equals(name)) {
-			System.out.println("İsim tekrar edemez.");
-		}else {
-			languageRepository.update(language, name);
-		}
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		 languageRepository.delete(id);
+		
+	}
+
+	@Override
+	public void update(Language language, int id) {
+		
+			languageRepository.update(language, id);
+		
 		
 		
 	}
@@ -60,5 +62,19 @@ public class LanguageManager implements LanguageService {
 		// TODO Auto-generated method stub
 		return languageRepository.getById(id);
 	}
+	
+	public boolean isValid(Language language){
+		for(Language language1 : getAll()) {
+			if(language1.getName().equalsIgnoreCase(language.getName())) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
 
-}
+
+
+	
+
+	}
