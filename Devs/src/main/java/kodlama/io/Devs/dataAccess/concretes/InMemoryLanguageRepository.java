@@ -41,8 +41,12 @@ public class InMemoryLanguageRepository implements LanguageRepository {
 
 
 	@Override
-	public void delete(Language language) {
-			languages.remove(language);
+	public void delete(int id) {
+		for(Language language1: languages) {
+			if(language1.getId()==id) {
+				languages.remove(id);
+			}
+		}
 		
 		
 		
@@ -51,16 +55,22 @@ public class InMemoryLanguageRepository implements LanguageRepository {
 
 
 	@Override
-	public void update(Language language, String name) {
-		languages.get(language.getId()).setName(name);
+	public void update(Language language, int id) {
+		 Language language1 = getById(language.getId());
+		 language1.setName(language.getName());
+		
 				
 	}
 
-
-
 	@Override
 	public Language getById(int id) {
-		return languages.get(id);
+		for(Language language1: languages) {
+			if(language1.getId()==id) {
+				return language1;
+			}
+		}
+		return null;
+		
 		
 	}
 

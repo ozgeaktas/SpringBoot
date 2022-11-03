@@ -33,18 +33,18 @@ public class LanguagesController {
 	}
 	
 	@PostMapping("/add")
-	public void add(Language language) {
+	public void add(Language language) throws Exception {
 		languageService.add(language);
 	}
 	
 	@PutMapping("/update")
-	public void update(Language language, String name) {
-		languageService.update(language, name);
+	public void update(Language language, int id) {
+		languageService.update(language, id);
 	}
 	
 	@DeleteMapping("/delete")
-	public void delete(Language language) {
-		languageService.delete(language);
+	public void delete(int id) {
+		languageService.delete(id);
 		
 	}
 	
