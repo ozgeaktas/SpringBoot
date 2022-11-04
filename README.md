@@ -6,7 +6,9 @@
 <li>Postgre Sql</li>
 <li>Swagger</li>
 <li>Postman</li>
-### Project:
+</br>
+</br>
+<b> Project:</b>
 <p>I want to write a project where we bring candidates coding skills together with employers.
 I used swagger-ui and also layered architecture this project.  </p>
 <b><h1>Req-1: Programming languages should be kept in the system.</h1></b>
