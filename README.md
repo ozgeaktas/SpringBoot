@@ -21,8 +21,12 @@ I used swagger-ui and also layered architecture this project.  </p>
 <p>Example: </p>
 <li>Java : Spring, JSP.</li>
 <li>JavaScript : Vue, React</li>
+
 ![Ekran Görüntüsü (705)](https://user-images.githubusercontent.com/54955167/203933383-a4f588d0-72ad-4924-b939-b745b183ac6e.png)
+
 ![Ekran Görüntüsü (706)](https://user-images.githubusercontent.com/54955167/203933483-4a38c41c-8c7c-42dd-9b8d-bace27213b6b.png)
-![Ekran Görüntüsü (704)](https://user-images.githubusercontent.com/54955167/203933588-6d0d88b6-15e4-47ec-a7db-2cfeb7bdacc5.png)
+
+![Ekran Görüntüsü (707)](https://user-images.githubusercontent.com/54955167/203933803-20ad4f98-066f-44e5-88cd-f19edc50116a.png)
+
 
 
