@@ -1,6 +1,7 @@
 package kodlama.io.Devs.webApi.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import kodlama.io.Devs.business.abstracts.LanguageService;
+import kodlama.io.Devs.business.requests.Language.CreateLanguageRequest;
+import kodlama.io.Devs.business.requests.Language.DeleteLanguageRequest;
+import kodlama.io.Devs.business.requests.Language.GetLanguageByIdRequest;
+import kodlama.io.Devs.business.requests.Language.UpdateLanguageRequest;
+import kodlama.io.Devs.business.responses.Language.GetAllLanguageResponse;
+import kodlama.io.Devs.business.responses.Language.GetLanguageByIdResponse;
 import kodlama.io.Devs.entities.concretes.Language;
 
 @RestController
@@ -23,28 +30,28 @@ public class LanguagesController {
 	}
 	
 	@GetMapping("/getall")
-	public List<Language> getAll(){
+	public List<GetAllLanguageResponse> getAll(){
 		return languageService.getAll();
 	}
 	
 	@GetMapping("/getbyid")
-	public Language getById(int id) {
-		return languageService.getById(id);
+	public GetLanguageByIdResponse getById(GetLanguageByIdRequest getLanguageByIdRequest) {
+		return languageService.getById(getLanguageByIdRequest);
 	}
 	
 	@PostMapping("/add")
-	public void add(Language language) throws Exception {
-		languageService.add(language);
+	public void add(CreateLanguageRequest createLanguageRequest) throws Exception {
+		languageService.add(createLanguageRequest);
 	}
 	
 	@PutMapping("/update")
-	public void update(Language language, int id) {
-		languageService.update(language, id);
+	public void update(UpdateLanguageRequest updateLanguageRequest) throws Exception {
+		languageService.update(updateLanguageRequest);
 	}
 	
 	@DeleteMapping("/delete")
-	public void delete(int id) {
-		languageService.delete(id);
+	public void delete(DeleteLanguageRequest deleteLanguageRequest) {
+		languageService.delete(deleteLanguageRequest);
 		
 	}
 	
